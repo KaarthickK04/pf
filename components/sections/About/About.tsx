@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { gsap, ScrollTrigger, prefersReducedMotion, EASE } from "@/lib/gsap";
+import { sceneScrub } from "@/lib/scene";
 import Button from "@/components/ui/Button";
 import VelocityMarquee from "@/components/ui/VelocityMarquee";
 import styles from "./About.module.css";
@@ -10,27 +11,27 @@ import { useLang } from "@/lib/i18n";
 const MARQUEE_ROWS = [
   {
     items: [
-      "Product Design",
-      "UX Design",
-      "UI Design",
-      "Design Systems",
-      "User Research",
-      "Interaction Design",
-      "Design Thinking",
+      "Digital Marketing",
+      "B2B Lead Generation",
+      "Content Strategy",
+      "Power BI Analytics",
+      "Copywriting",
+      "Ad Script Writing",
+      "Foundational SEO",
+      "Brand Storytelling",
     ],
     velocity: 34,
   },
   {
     items: [
-      "Wireframing",
-      "Prototyping",
-      "Visual Design",
-      "Accessibility",
-      "Motion Design",
-      "Figma",
-      "Framer",
-      "AI-Assisted Design",
-      "Frontend Development",
+      "Meta & Instagram Ads",
+      "SQL (MySQL & Server)",
+      "Python",
+      "Client & Supplier Relations",
+      "Sales Pipelines",
+      "Product Descriptions",
+      "Data Visualization",
+      "Market Positioning",
     ],
     velocity: -28,
     outline: true,
@@ -38,10 +39,10 @@ const MARQUEE_ROWS = [
 ];
 
 const METRICS = [
-  { value: "1st", count: null, key: "about.m1" },
-  { value: "3+", count: 3, suffix: "+", key: "about.m2" },
-  { value: "$70K+", count: 70, prefix: "$", suffix: "K+", key: "about.m3" },
-  { value: "1B+", count: null, key: "about.m4" },
+  { value: "81%", count: 81, suffix: "%", key: "about.m1" },
+  { value: "4+", count: 4, suffix: "+", key: "about.m2" },
+  { value: "200+", count: 200, suffix: "+", key: "about.m3" },
+  { value: "8.24", count: null, key: "about.m4" },
 ];
 
 export default function About() {
@@ -102,6 +103,14 @@ export default function About() {
         el.querySelector(`.${styles.edu}`)!,
         { stagger: 0.12 }
       );
+
+      /* ---------- Scroll: gentle layered exit ---------- */
+      gsap
+        .timeline({
+          scrollTrigger: { ...sceneScrub(el), scrub: true },
+        })
+        .to(`.${styles.wrap}`, { y: -40, autoAlpha: 0.3 }, 0)
+        .to(`.${styles.header}`, { y: -20 }, 0);
     }, el);
 
     return () => ctx.revert();

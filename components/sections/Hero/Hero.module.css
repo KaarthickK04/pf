@@ -6,12 +6,15 @@
 .hero {
   position: relative;
   background: #fff; /* opaque, so the layer above covers it cleanly */
-  height: auto;
+  height: 100%;
   min-height: 100svh;
+  max-height: 100svh;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   overflow: hidden;
-  padding-top: 96px;
+  padding-top: max(56px, 7vh);
+  padding-bottom: 6px;
 }
 
 /* ---------- ambient composition ---------- */
@@ -76,23 +79,24 @@
 .head {
   text-align: center;
   z-index: 5;
-  padding: 20px 24px 0;
+  padding: 0 20px;
+  flex-shrink: 0;
 }
 /* plain eyebrow — no pill, no box; the headline owns the stage */
 .kicker {
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--ink-3);
 }
 
 .h1 {
-  margin-top: 22px;
+  margin-top: clamp(4px, 0.9vh, 10px);
   font-weight: 900;
-  font-size: clamp(46px, 6.6vw, 100px);
+  font-size: clamp(24px, min(3.8vw, 4.4vh), 48px);
   letter-spacing: -0.035em;
-  line-height: 1.02;
+  line-height: 1.08;
 }
 .row {
   display: block;
@@ -108,10 +112,10 @@
 }
 
 .sub {
-  margin: 22px auto 0;
+  margin: clamp(4px, 0.7vh, 8px) auto 0;
   max-width: 560px;
-  font-size: 15.5px;
-  line-height: 1.65;
+  font-size: clamp(11.5px, 0.88vw, 13px);
+  line-height: 1.35;
   color: var(--ink-2);
 }
 
@@ -119,7 +123,7 @@
   display: flex;
   gap: 10px;
   justify-content: center;
-  margin-top: 26px;
+  margin-top: clamp(6px, 1.2vh, 12px);
 }
 .play {
   font-size: 9px;
@@ -130,12 +134,12 @@
 .stageRow {
   flex: 1;
   display: grid;
-  grid-template-columns: 1fr minmax(420px, 600px) 1fr;
+  grid-template-columns: 1fr minmax(220px, 340px) 1fr;
   align-items: end;
-  max-width: 1400px;
+  max-width: 1200px;
   width: 100%;
   margin: 0 auto;
-  padding: 30px 44px 0;
+  padding: clamp(4px, 1vh, 12px) 24px 0;
   min-height: 0;
   z-index: 1;
 }
@@ -143,48 +147,48 @@
 .side {
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  padding-bottom: 76px;
+  gap: clamp(6px, 1.2vh, 12px);
+  padding-bottom: clamp(6px, 1.6vh, 18px);
   z-index: 5;
 }
 .sideL {
   align-items: flex-end;
-  padding-right: 26px;
+  padding-right: 16px;
 }
 .sideR {
   align-items: flex-start;
-  padding-left: 26px;
+  padding-left: 16px;
 }
 .statCard {
   background: #fff;
-  border-radius: 16px;
+  border-radius: 12px;
   border: 1px solid rgba(20, 20, 20, 0.05);
-  box-shadow: 0 18px 44px -14px rgba(20, 20, 20, 0.1);
-  padding: 18px 22px;
-  width: 196px;
+  box-shadow: 0 10px 28px -8px rgba(20, 20, 20, 0.08);
+  padding: clamp(6px, 0.9vh, 10px) clamp(8px, 1vw, 14px);
+  width: clamp(125px, 11vw, 160px);
   will-change: transform;
 }
 .sideL .statCard:nth-child(1) {
-  transform: rotate(-4deg);
+  transform: rotate(-3deg);
 }
 .sideL .statCard:nth-child(2) {
-  transform: rotate(2.5deg) translateX(-18px);
+  transform: rotate(2deg) translateX(-8px);
 }
 .sideR .statCard:nth-child(1) {
-  transform: rotate(4deg);
+  transform: rotate(3deg);
 }
 .sideR .statCard:nth-child(2) {
-  transform: rotate(-2.5deg) translateX(18px);
+  transform: rotate(-2deg) translateX(8px);
 }
 .statIcon {
-  width: 18px;
-  height: 18px;
+  width: 14px;
+  height: 14px;
   object-fit: contain;
-  margin-bottom: 9px;
+  margin-bottom: 3px;
 }
 .statNum {
   display: flex;
-  font-size: 30px;
+  font-size: clamp(18px, 1.6vw, 22px);
   font-weight: 900;
   letter-spacing: -0.02em;
   line-height: 1;
@@ -194,11 +198,11 @@
   color: var(--accent);
 }
 .statLabel {
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 600;
   color: var(--ink-3);
-  margin-top: 6px;
-  line-height: 1.35;
+  margin-top: 2px;
+  line-height: 1.25;
 }
 
 /* ---------- Stage: arch + portrait (the focal point) ---------- */
@@ -209,29 +213,29 @@
   justify-content: center;
   align-items: flex-end;
   height: 100%;
-  min-height: 480px;
-  padding-bottom: 24px;
+  min-height: 0;
+  padding-bottom: 2px;
 }
 .arch {
   position: absolute;
-  bottom: 24px;
+  bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: min(450px, 78%);
-  height: min(88%, 540px);
+  width: min(280px, 76%);
+  height: min(92%, 36vh);
   background: #f4f4f5;
-  border-radius: 320px 320px 26px 26px;
+  border-radius: 320px 320px 24px 24px;
   z-index: 1;
 }
 .archLine {
   position: absolute;
-  bottom: 38px;
+  bottom: 0;
   left: 50%;
-  transform: translateX(-50%) translateX(-16px);
-  width: min(450px, 78%);
-  height: min(88%, 540px);
+  transform: translateX(-50%) translateX(-8px);
+  width: min(280px, 76%);
+  height: min(92%, 36vh);
   border: 1.2px solid #e6e6e8;
-  border-radius: 320px 320px 26px 26px;
+  border-radius: 320px 320px 24px 24px;
   z-index: 0;
 }
 
@@ -239,91 +243,13 @@
   position: relative;
   z-index: 3;
   width: auto;
-  height: min(54vh, 520px);
-  max-width: 92%;
+  height: min(36vh, 310px);
+  max-height: 100%;
+  max-width: 90%;
   object-fit: contain;
   object-position: bottom;
-  filter: drop-shadow(0 36px 58px rgba(20, 20, 20, 0.17));
+  filter: drop-shadow(0 20px 36px rgba(20, 20, 20, 0.14));
   will-change: transform;
-}
-
-/* ---------- chip rails — larger, legible ---------- */
-.chipLayer {
-  position: absolute;
-  inset: 0 0 24px 0;
-  z-index: 4;
-  pointer-events: none;
-}
-.chip {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 62px;
-  height: 62px;
-  background: #fff;
-  border: 1px solid rgba(20, 20, 20, 0.05);
-  border-radius: 18px;
-  box-shadow: 0 14px 34px -8px rgba(20, 20, 20, 0.15);
-  will-change: transform;
-  pointer-events: auto;
-  transition: scale var(--dur-fast) var(--ease-out-expo), box-shadow var(--dur-fast) ease;
-}
-.chip:hover {
-  scale: 1.12;
-  box-shadow: 0 20px 44px -8px rgba(20, 20, 20, 0.23);
-}
-.chip img {
-  width: 34px;
-  height: 34px;
-  object-fit: contain;
-}
-.chipWide {
-  width: auto;
-  padding: 0 18px;
-}
-.chipWide img {
-  width: auto;
-  height: 24px;
-}
-
-/* ---------- script annotations ---------- */
-.annot {
-  position: absolute;
-  left: -14%;
-  top: -4%;
-  z-index: 5;
-  font-family: var(--font-script), cursive;
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 1.25;
-  color: var(--ink-2);
-  rotate: -4deg;
-  text-align: left;
-  pointer-events: none;
-}
-.annot b {
-  color: var(--accent);
-}
-.stackLabel {
-  position: absolute;
-  right: -12%;
-  top: -6%;
-  z-index: 5;
-  font-family: var(--font-script), cursive;
-  font-size: 21px;
-  font-weight: 700;
-  color: var(--ink-2);
-  rotate: 4deg;
-  white-space: nowrap;
-  pointer-events: none;
-}
-.labelArrow {
-  position: absolute;
-  left: 4px;
-  bottom: -32px;
-  width: 38px;
-  color: var(--ink-3);
 }
 
 /* ---------- bottom: one quiet cue ---------- */
@@ -331,17 +257,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  padding: 20px 0 26px;
-  font-size: 11px;
+  gap: 6px;
+  padding: 4px 0 6px;
+  font-size: 10px;
   font-weight: 700;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--ink-3);
   z-index: 5;
 }
 .cueArrow {
-  font-size: 14px;
+  font-size: 12px;
   color: var(--accent);
   animation: cue 1.8s ease-in-out infinite;
 }
@@ -352,81 +278,71 @@
     opacity: 1;
   }
   55% {
-    transform: translateY(6px);
+    transform: translateY(4px);
     opacity: 0.35;
   }
 }
 
-/* ============ Responsive ============ */
-@media (max-width: 1180px) {
+/* ============ Mobile / Responsive ============ */
+@media (max-width: 767px) {
   .hero {
-    padding-top: 104px;
-    gap: 34px;
+    height: auto;
+    min-height: 100svh;
+    max-height: none;
+    overflow: visible;
+    padding-top: 76px;
+    padding-bottom: 24px;
+    gap: 20px;
   }
   .stageRow {
-    grid-template-columns: 1fr;
-    gap: 34px;
-    padding: 0 24px;
-  }
-  .side {
-    flex-direction: row;
-    justify-content: center;
-    padding: 0;
-    order: 2;
-    flex-wrap: wrap;
-  }
-  .sideL .statCard,
-  .sideR .statCard {
-    transform: rotate(-2deg) !important;
-  }
-  .sideR {
-    order: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 0 16px;
   }
   .stage {
     order: 1;
-    min-height: 0;
-    margin-top: 6px;
+    min-height: 200px;
+    height: auto;
     padding-bottom: 0;
+  }
+  .portrait {
+    height: 200px;
+    max-height: 34vh;
+    max-width: min(280px, 80vw);
   }
   .arch,
   .archLine {
     bottom: 0;
+    width: min(240px, 75%);
   }
-  .portrait {
-    height: auto;
-    max-height: 54vh;
-    max-width: min(360px, 80vw);
-  }
-  .annot,
-  .stackLabel,
-  .ring,
-  .plusA,
-  .plusB {
-    display: none;
-  }
-  .chip {
-    width: 50px;
-    height: 50px;
-  }
-  .chip img {
-    width: 27px;
-    height: 27px;
-  }
-}
-
-@media (max-width: 560px) {
-  .h1 {
-    font-size: clamp(36px, 10.5vw, 50px);
-  }
-  .ctas {
+  .side {
+    order: 2;
+    flex-direction: row;
+    justify-content: center;
     flex-wrap: wrap;
+    gap: 10px;
+    padding: 0;
+    width: 100%;
   }
-  .statCard {
-    width: calc(50% - 12px);
-    min-width: 148px;
+  .sideR {
+    order: 3;
+  }
+  .sideL .statCard,
+  .sideR .statCard {
+    transform: none !important;
+    width: calc(50% - 8px);
+    min-width: 130px;
+    max-width: 160px;
   }
   .glow {
     width: 320px;
     height: 320px;
+  }
+  .ring,
+  .plusA,
+  .plusB {
+    display: none;
   }
 }

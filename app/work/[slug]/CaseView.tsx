@@ -37,7 +37,7 @@ export default function CaseView({ slug }: { slug: string }) {
             page — a shared case-study link is often a visitor's first screen */}
         <div className={styles.barRight}>
           <Link href="/" className={styles.logo}>
-            GIREESH<i>.</i>
+            KAARTHICK<i>.</i>
           </Link>
           <LanguageToggle />
         </div>
@@ -66,18 +66,21 @@ export default function CaseView({ slug }: { slug: string }) {
               <span>{tags.join(" · ")}</span>
             </div>
             {/* verified official destinations only — never a guessed URL */}
-            {project.site && (
+            {((project.sites && project.sites.length > 0) || project.site) && (
               <div>
                 <b>{t("case.site")}</b>
-                <span>
-                  <a
-                    className={styles.siteLink}
-                    href={project.site.url}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {project.site.label} ↗
-                  </a>
+                <span className={styles.siteLinks}>
+                  {(project.sites ?? (project.site ? [project.site] : [])).map((s) => (
+                    <a
+                      key={s.url}
+                      className={styles.siteLink}
+                      href={s.url}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {s.label} ↗
+                    </a>
+                  ))}
                 </span>
               </div>
             )}

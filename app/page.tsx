@@ -42,11 +42,11 @@ export default function Home() {
           <TunnelIntro />
         </Scene>
 
-        <Scene order={2} id="hero">
+        <Scene order={2} runway={1.2} id="hero">
           <Hero />
         </Scene>
 
-        <Scene order={3} id="about">
+        <Scene order={3} runway={1} id="about">
           <About />
         </Scene>
 

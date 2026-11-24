@@ -1,7 +1,5 @@
-/* My Design Stack — tools shown in the spiral orbit.
-   `src` uses a real logo from /public/images/logos when we have one;
-   otherwise a brand-tinted monogram mark keeps the set visually uniform.
-   To upgrade a monogram: drop an SVG/PNG in that folder and swap in `src`. */
+/* My Growth & Marketing Stack — tools shown in the spiral orbit.
+   Grouped into Marketing, Analytics, AI, and Creative. */
 
 export type Tool = {
   name: string;
@@ -12,34 +10,30 @@ export type Tool = {
 };
 
 export const TOOLS: Tool[] = [
-  /* — AI — */
-  { name: "Claude", group: "AI", src: "/images/logos/claude.png" },
-  { name: "ChatGPT", group: "AI", src: "/images/logos/chatgpt.png" },
-  { name: "Gemini", group: "AI", mono: "Gm", color: "#2C6BD8" },
-  { name: "Perplexity", group: "AI", mono: "Px", color: "#1F7A86" },
+  /* — Marketing & Growth (mapped to Design group in UI) — */
+  { name: "Meta Ads", group: "Design", mono: "MA", color: "#0081FB" },
+  { name: "Instagram", group: "Design", mono: "IG", color: "#E1306C" },
+  { name: "SEO", group: "Design", mono: "SEO", color: "#10B981" },
+  { name: "Content Strategy", group: "Design", mono: "CS", color: "#8B5CF6" },
+  { name: "B2B Sales", group: "Design", mono: "B2B", color: "#F59E0B" },
 
-  /* — Design — */
-  { name: "Figma", group: "Design", src: "/images/logos/figma.png" },
-  { name: "Framer", group: "Design", src: "/images/logos/framer.png" },
-  { name: "Spline", group: "Design", src: "/images/logos/spline.png" },
-  { name: "Notion", group: "Design", src: "/images/logos/notion.png" },
-
-  /* — Build — */
-  { name: "Cursor", group: "Build", mono: "Cu", color: "#141414" },
-  { name: "VS Code", group: "Build", mono: "VS", color: "#0065A9" },
+  /* — Analytics & Data (mapped to Build group in UI) — */
+  { name: "Power BI", group: "Build", mono: "PBI", color: "#F2C811" },
+  { name: "SQL", group: "Build", mono: "SQL", color: "#00758F" },
+  { name: "Excel", group: "Build", mono: "XL", color: "#217346" },
+  { name: "Python", group: "Build", mono: "Py", color: "#3776AB" },
+  { name: "MySQL", group: "Build", mono: "My", color: "#4479A1" },
   { name: "GitHub", group: "Build", mono: "GH", color: "#181717" },
-  { name: "React", group: "Build", mono: "Re", color: "#0E7C99" },
-  { name: "Next.js", group: "Build", mono: "N", color: "#141414" },
-  { name: "Tailwind", group: "Build", mono: "TW", color: "#0891A6" },
-  { name: "HTML", group: "Build", mono: "H5", color: "#D6431C" },
-  { name: "CSS", group: "Build", mono: "C3", color: "#1572B6" },
 
-  /* — Creative — */
-  { name: "Photoshop", group: "Creative", mono: "Ps", color: "#1E7FC4" },
-  { name: "Illustrator", group: "Creative", mono: "Ai", color: "#D97A00" },
-  { name: "After Effects", group: "Creative", mono: "Ae", color: "#5C4FE0" },
-  { name: "Midjourney", group: "Creative", src: "/images/logos/midjourney.png" },
+  /* — AI & Productivity — */
+  { name: "ChatGPT", group: "AI", src: "/images/logos/chatgpt.png" },
+  { name: "Claude", group: "AI", src: "/images/logos/claude.png" },
+  { name: "Gemini", group: "AI", mono: "Gm", color: "#2C6BD8" },
+  { name: "Notion", group: "AI", src: "/images/logos/notion.png" },
+
+  /* — Creative & Media — */
+  { name: "Canva", group: "Creative", mono: "Ca", color: "#00C4CC" },
   { name: "CapCut", group: "Creative", src: "/images/logos/capcut.png" },
-  { name: "Runway", group: "Creative", mono: "Rw", color: "#141414" },
-  { name: "ElevenLabs", group: "Creative", mono: "11", color: "#141414" },
+  { name: "Ad Scripting", group: "Creative", mono: "Sc", color: "#EC4899" },
+  { name: "Storytelling", group: "Creative", mono: "St", color: "#6366F1" },
 ];

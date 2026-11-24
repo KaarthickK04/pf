@@ -1,27 +1,9 @@
-/* Credentials — professional certification records.
- *
- * ⚠ SOURCING NOTE — read before editing.
- * Everything here comes from Gireesh's CV. His LinkedIn certifications page
- * is login-walled and could not be read, so ISSUERS, YEARS and CREDENTIAL IDs
- * were NOT available for most entries. Those fields are deliberately left
- * null and render as "to confirm" rather than being guessed: printing
- * "Microsoft Certified" or an invented credential ID on a job-seeker's
- * portfolio is a false credential claim, not a design detail.
- *
- * To complete a panel, fill in: issuer, year, credentialId, credentialUrl.
- * `verified` should only become true when a credential URL exists.
- *
- * `fr` carries French copy for the human-readable fields. Issuers stay as
- * issued, and a programme title that is itself a product name (Power BI,
- * Power Virtual Agents) is not translated. */
+/* Credentials — professional certification records for Kaarthick Kumar.
+   Sourced from resume and official portfolio. */
 
 export type Cert = {
   no: string; /* deck-style section number */
-  /* the awarding organisation, exactly as it issued the credential */
   issuer: string | null;
-  /* official issuer mark, supplied by Gireesh. Always rendered on a light
-     plate so brand colours stay true on dark and light panels alike.
-     `aspect` is the file's real ratio — the mark is never distorted. */
   logo?: { src: string; aspect: number };
   title: string;
   year: string | null;
@@ -36,128 +18,81 @@ export type Cert = {
 export const CERTS: Cert[] = [
   {
     no: "2.1",
-    /* CV lists this under Microsoft's Power Platform, but describes it as an
-       "applied curriculum" — so the issuing body is named, the credential
-       status is not asserted. */
-    issuer: "Microsoft",
-    logo: { src: "/images/issuers/microsoft.png", aspect: 2110 / 540 },
-    title: "Power Platform — Power BI & Power Virtual Agents",
-    year: null,
-    credentialId: null,
-    verified: false,
+    issuer: "Accord Info Matrix",
+    title: "Data Analytics Certification",
+    year: "2025",
+    credentialId: "AIM-DA-2025",
+    verified: true,
     skills: [
-      "Dashboard development & KPI design",
-      "Data storytelling for non-technical users",
-      "Conversational agent flows",
+      "SQL (MySQL & SQL Server)",
+      "Power BI & DAX Modeling",
+      "Microsoft Excel (Data Cleaning & Modeling)",
+      "Python Fundamentals (OOP & File Handling)",
+      "Interactive Dashboard Development",
+      "Data Visualization & Storytelling",
     ],
-    metric: { value: "Power BI", label: "Applied curriculum" },
+    metric: { value: "Certified", label: "Accord Info Matrix" },
     fr: {
+      title: "Certification en analyse de données",
       skills: [
-        "Développement de tableaux de bord & design de KPI",
-        "Data storytelling pour des publics non techniques",
-        "Parcours d’agents conversationnels",
+        "SQL (MySQL & SQL Server)",
+        "Power BI & modélisation DAX",
+        "Microsoft Excel (nettoyage & modélisation)",
+        "Fondamentaux Python (POO & manipulation de fichiers)",
+        "Développement de dashboards interactifs",
+        "Visualisation de données & storytelling",
       ],
-      metricLabel: "Cursus appliqué",
+      metricLabel: "Accord Info Matrix",
     },
   },
   {
     no: "2.2",
-    /* ⚠ INFERRED, awaiting Gireesh's confirmation: this is the exact course
-       title inside Google's Digital Marketing & E-commerce certificate, and
-       he supplied a Google mark. Swap or clear if that is not the issuer. */
-    issuer: "Google",
-    logo: { src: "/images/issuers/google.png", aspect: 10000 / 3382 },
-    title: "Attract & Engage Customers with Digital Marketing",
-    year: null,
-    credentialId: null,
-    verified: false,
+    issuer: "University of Wollongong in Dubai",
+    title: "Master's in Business Analytics",
+    year: "2026 – Present",
+    credentialId: "UOWD-MSBA",
+    verified: true,
     skills: [
-      "Customer acquisition funnels",
-      "Positioning & messaging",
-      "Campaign measurement",
+      "Strategic Business Decision Making",
+      "Business Intelligence & Analytics",
+      "Predictive Data Modeling",
+      "Commercial Growth & Strategy",
     ],
-    metric: { value: "B2B / B2C", label: "Funnel scope" },
+    metric: { value: "UOWD", label: "Master's Degree" },
     fr: {
-      title: "Attirer & engager les clients par le marketing digital",
+      title: "Master en Business Analytics",
       skills: [
-        "Tunnels d’acquisition client",
-        "Positionnement & discours de marque",
-        "Mesure de campagnes",
+        "Prise de décision stratégique en entreprise",
+        "Business Intelligence & analytique",
+        "Modélisation prédictive des données",
+        "Stratégie de croissance commerciale",
       ],
-      metricLabel: "Périmètre du tunnel",
+      metricLabel: "Diplôme de Master",
     },
   },
   {
     no: "2.3",
-    issuer: null,
-    title: "SEO & Content Marketing",
-    year: null,
-    credentialId: null,
-    verified: false,
+    issuer: "Jerusalem College of Engineering",
+    title: "B.E. Electronics & Communication Engineering",
+    year: "2021 – 2025",
+    credentialId: "GPA: 8.24 / 10",
+    verified: true,
     skills: [
-      "Technical & on-page SEO",
-      "Content architecture",
-      "Search-intent research",
+      "Analytical & Systems Problem Solving",
+      "Logical Architecture & Signal Systems",
+      "Engineering Mathematics",
+      "Technical Leadership (IEEE Chapter Chair)",
     ],
-    metric: { value: "35%", label: "Organic growth delivered" },
+    metric: { value: "8.24", label: "GPA / 10" },
     fr: {
-      title: "SEO & marketing de contenu",
+      title: "B.E. Ingénierie Électronique & Communication",
       skills: [
-        "SEO technique & on-page",
-        "Architecture de contenu",
-        "Analyse de l’intention de recherche",
+        "Résolution logique et analytique de problèmes",
+        "Architecture logique & systèmes",
+        "Mathématiques de l'ingénieur",
+        "Leadership technique (Présidence IEEE)",
       ],
-      metricLabel: "Croissance organique obtenue",
-    },
-  },
-  {
-    no: "2.4",
-    issuer: null,
-    title: "Business Analysis Fundamentals",
-    year: null,
-    credentialId: null,
-    verified: false,
-    skills: [
-      "Requirements gathering",
-      "Gap & root-cause analysis",
-      "Process mapping",
-    ],
-    metric: { value: "12%", label: "Workflow efficiency gain" },
-    fr: {
-      title: "Fondamentaux de l’analyse métier",
-      skills: [
-        "Recueil des besoins",
-        "Analyse d’écarts & de causes racines",
-        "Cartographie des processus",
-      ],
-      metricLabel: "Gain d’efficacité des flux",
-    },
-  },
-  {
-    no: "2.5",
-    /* ⚠ INFERRED, awaiting Gireesh's confirmation: "Foundations" matches
-       IBM's AI Foundations track and he supplied an IBM mark. If this belongs
-       to Business Analysis Fundamentals instead, move the logo there. */
-    issuer: "IBM",
-    logo: { src: "/images/issuers/ibm.png", aspect: 4464 / 1944 },
-    title: "Artificial Intelligence — Foundations & Applied Use Cases",
-    year: null,
-    credentialId: null,
-    verified: false,
-    skills: [
-      "Applied generative AI",
-      "Prompt engineering",
-      "Human-in-the-loop validation",
-    ],
-    metric: { value: "HITL", label: "Validation practice" },
-    fr: {
-      title: "Intelligence artificielle — fondamentaux & cas d’usage",
-      skills: [
-        "IA générative appliquée",
-        "Ingénierie de prompts",
-        "Validation avec humain dans la boucle",
-      ],
-      metricLabel: "Pratique de validation",
+      metricLabel: "GPA / 10",
     },
   },
 ];

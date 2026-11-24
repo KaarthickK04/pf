@@ -135,9 +135,17 @@
   letter-spacing: -0.04em;
   line-height: 1;
 }
+.siteLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
 .siteLink {
   color: var(--accent);
   transition: opacity 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
 }
 .siteLink:hover {
   opacity: 0.7;

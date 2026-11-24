@@ -269,15 +269,15 @@ export default function Certifications() {
                   <div className={styles.cols}>
                     {/* credential record — the fields a real certificate carries */}
                     <dl className={styles.record}>
-                      <div>
+                      <div className={styles.recIssuer}>
                         <dt>{t("cert.issuedBy")}</dt>
                         <dd>{c.issuer ?? t("cert.tbc")}</dd>
                       </div>
-                      <div>
+                      <div className={styles.recYear}>
                         <dt>{t("cert.year")}</dt>
                         <dd>{c.year ?? t("cert.tbc")}</dd>
                       </div>
-                      <div>
+                      <div className={styles.recId}>
                         <dt>{t("cert.id")}</dt>
                         <dd>{c.credentialId ?? "—"}</dd>
                       </div>
@@ -314,7 +314,7 @@ export default function Certifications() {
 
       <div className={styles.foot}>
         <span className={styles.brandFoot}>
-          <b>06</b> Gireesh
+          <b>06</b> Kaarthick
         </span>
         <span className={styles.count}>
           01 / {String(PANELS.length).padStart(2, "0")}

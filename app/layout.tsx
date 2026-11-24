@@ -24,26 +24,26 @@ const caveat = Caveat({
 });
 
 const DESCRIPTION =
-  "Product Designer crafting UX for climate-tech and AI products — where design, data, and business strategy meet. Based in Antibes, France.";
+  "Digital marketing and business development professional with hands-on experience in B2B lead generation, client relationship management, product copywriting, and Meta/Instagram ad scripting. Combining commercial execution and brand storytelling with data-driven insights via Power BI, SQL, and Python. Based in Dubai, UAE.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Gireesh Kumar Reddy — Product Designer",
+    default: "Kaarthick Kumar — Digital Marketing & Business Development",
     template: "%s",
   },
   description: DESCRIPTION,
   openGraph: {
-    title: "Gireesh Kumar Reddy — Product Designer",
+    title: "Kaarthick Kumar — Digital Marketing & Business Development",
     description: DESCRIPTION,
     url: SITE_URL,
-    siteName: "Gireesh — Portfolio",
+    siteName: "Kaarthick — Portfolio",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Gireesh Kumar Reddy — Product Designer",
+    title: "Kaarthick Kumar — Digital Marketing & Business Development",
     description: DESCRIPTION,
   },
 };
@@ -54,7 +54,7 @@ const personJsonLd = {
   name: PERSON.name,
   jobTitle: PERSON.jobTitle,
   email: `mailto:${PERSON.email}`,
-  address: { "@type": "PostalAddress", addressLocality: "Antibes", addressCountry: "FR" },
+  address: { "@type": "PostalAddress", addressLocality: "Dubai", addressCountry: "AE" },
   url: SITE_URL,
   sameAs: PERSON.sameAs,
 };

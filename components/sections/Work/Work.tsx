@@ -14,11 +14,10 @@ import { PROJECTS } from "@/content/projects";
 import styles from "./Work.module.css";
 import { useLang, L } from "@/lib/i18n";
 
-const SPREAD = 330; /* px between card centers on the arc */
-/* Scroll px per card. With 14 projects this is the page's longest pin, so
-   the step is kept tight — enough for each card to land at centre, without
-   turning the section into a corridor. */
-const PIN_PER_CARD = 210;
+const SPREAD = 350; /* px between card centers on the arc */
+/* Scroll px per card. Kept tight enough for each card to land at centre,
+   without turning the section into an endless corridor. */
+const PIN_PER_CARD = 220;
 
 /* two-digit counter — the collection is past nine projects */
 const pad = (n: number) => String(n).padStart(2, "0");
@@ -26,6 +25,7 @@ const pad = (n: number) => String(n).padStart(2, "0");
 export default function Work() {
   const root = useRef<HTMLElement>(null);
   const { t, lang } = useLang();
+  const projectsKey = PROJECTS.map((p) => p.slug).join(",");
 
   useEffect(() => {
     const el = root.current;
@@ -53,8 +53,9 @@ export default function Work() {
                opaque so every cover reads at its true brightness; only
                cards already travelling off the viewport edge fade, and
                only enough to soften the exit. */
-            autoAlpha: ad <= 2 ? 1 : Math.max(0.55, 1 - (ad - 2) * 0.22),
+            autoAlpha: ad <= 2 ? 1 : Math.max(0.4, 1 - (ad - 2) * 0.3),
             zIndex: Math.round(100 - ad * 10),
+            pointerEvents: ad > 2.5 ? "none" : "auto",
           });
         });
         const active = Math.round(gsap.utils.clamp(0, n - 1, p));
@@ -96,7 +97,7 @@ export default function Work() {
        cards through a hidden state. The row simply renders. */
 
     return () => mm.revert();
-  }, []);
+  }, [projectsKey, lang]);
 
   return (
     <section className={styles.work} id="work" ref={root}>
@@ -119,7 +120,11 @@ export default function Work() {
       <div className={styles.stage}>
         <div className={styles.track}>
           {PROJECTS.map((p, i) => (
-            <article className={styles.card} key={p.slug} style={{ zIndex: 100 - i }}>
+            <article
+              className={styles.card}
+              key={p.slug}
+              style={{ zIndex: 100 - i, transform: `translateX(${i * SPREAD}px)` }}
+            >
               <a className={styles.inner} href={`/work/${p.slug}`}>
                 <div
                   className={styles.cover}

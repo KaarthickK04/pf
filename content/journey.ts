@@ -29,106 +29,82 @@ export type Chapter = {
 export const CHAPTERS: Chapter[] = [
   {
     id: "roots",
-    year: "2021",
-    title: "Roots",
-    place: "Telangana, India",
+    year: "2021 – 2025",
+    title: "Engineering the Foundation",
+    place: "Jerusalem College of Engineering · Chennai, India",
     story:
-      "Where the story starts. Southern India — the fixed point everything after it gets measured against: seven roles, two countries, and one deliberate change of craft.",
-    bridge: "It started with a sales target, not a design brief.",
+      "Where the journey begins. Completed a B.E. in Electronics and Communication Engineering with an 8.24 GPA, building a strong logical, analytical, and systems-level problem-solving foundation.",
+    bridge: "Engineering taught me systems; communication taught me how to move people.",
     fr: {
-      title: "Racines",
-      place: "Telangana, Inde",
+      title: "L'ingénierie comme fondation",
+      place: "Jerusalem College of Engineering · Chennai, Inde",
       story:
-        "Là où l’histoire commence. Le sud de l’Inde — le point fixe auquel tout se mesure ensuite : sept postes, deux pays, et un changement de métier assumé.",
-      bridge: "Cela a commencé par un objectif de vente, pas par un brief de design.",
+        "Là où l'aventure commence. Obtention d'un B.E. en électronique et communication (GPA 8.24), forgeant une solide rigueur analytique et une méthode de résolution logique.",
+      bridge: "L'ingénierie m'a appris les systèmes ; la communication m'a appris à convaincre.",
     },
   },
   {
-    id: "customers",
-    year: "2022",
-    title: "Customers first, pixels much later",
-    place: "Tutorac → Sage Finance · Telangana",
+    id: "leadership",
+    year: "2024 – 2025",
+    title: "Leadership & Community Scale",
+    place: "IEEE Student Chapter & AECE · Chennai",
     story:
-      "Business development for a subscription e-learning platform: reading why people renewed, why they left, and what actually moved a portfolio. $50K+ in subscriptions in a single month. By September I had moved to Sage Finance.",
-    bridge:
-      "Two years of asking customers questions before I ever opened a design tool — still the part of my process I trust most.",
+      "Served as Chairman of the IEEE Electron Devices Society, growing chapter membership and attendance by 81%. Later coordinated logistics and execution for a National Technical Symposium hosting 200+ participants.",
+    bridge: "Leading teams showed me how positioning, clear messaging, and community engagement inspire action.",
     fr: {
-      title: "Les clients d’abord, les pixels bien plus tard",
-      place: "Tutorac → Sage Finance · Telangana",
+      title: "Leadership & impact communautaire",
+      place: "IEEE Student Chapter & AECE · Chennai",
       story:
-        "Développement commercial pour une plateforme d’e-learning par abonnement : comprendre pourquoi on renouvelle, pourquoi on part, ce qui fait vraiment bouger un portefeuille. Plus de 50 000 $ d’abonnements en un mois. En septembre, je rejoignais Sage Finance.",
-      bridge:
-        "Deux ans à interroger des clients avant d’ouvrir le moindre outil de design — c’est resté la partie de mon processus en laquelle j’ai le plus confiance.",
+        "Président du chapitre étudiant IEEE Electron Devices Society, avec une hausse de 81% de la participation. Coordination générale d'un symposium technique national de plus de 200 participants.",
+      bridge: "Diriger des équipes m'a montré comment le positionnement et le message mobilisent.",
     },
   },
   {
-    id: "playbook",
-    year: "2023",
-    title: "Writing the playbook",
-    place: "Sage Finance · Telangana, India",
-    story:
-      "A full year owning sales strategy and client acquisition: market analysis, segmentation, pipeline against tracked KPIs. I wrote the inbound-to-close playbook the wider sales team adopted, and a $20K+ week turned into a promotion to Marketing Team Lead.",
-    bridge:
-      "That playbook was the first time I designed a system instead of working inside one. I wanted to learn how to do it properly.",
-    fr: {
-      title: "Écrire le playbook",
-      place: "Sage Finance · Telangana, Inde",
-      story:
-        "Une année entière à piloter la stratégie commerciale et l’acquisition client : analyse de marché, segmentation, pipeline face aux KPI suivis. J’ai écrit le playbook inbound-to-close adopté par toute l’équipe, et une semaine à plus de 20 000 $ est devenue une promotion au marketing.",
-      bridge:
-        "Ce playbook a été la première fois que je concevais un système au lieu de travailler dedans. Restait à apprendre à le faire vraiment.",
-    },
-  },
-  {
-    id: "france",
-    year: "2024",
-    title: "Starting over, in French",
-    place: "Montpellier Business School · France",
-    story:
-      "August closed the India chapter. September opened an MSc in International Business at Montpellier Business School — new country, new language, and the formal training my instincts had been running without.",
-    bridge: "Business school handed me the vocabulary. The next year handed me the craft.",
-    fr: {
-      title: "Tout recommencer, en français",
-      place: "Montpellier Business School · France",
-      story:
-        "Août a refermé le chapitre indien. Septembre a ouvert un MSc International Business à Montpellier Business School — nouveau pays, nouvelle langue, et la formation qui manquait à des intuitions déjà en marche.",
-      bridge: "L’école m’a donné le vocabulaire. L’année suivante m’a donné le métier.",
-    },
-  },
-  {
-    id: "three-rooms",
+    id: "analytics",
     year: "2025",
-    title: "Three rooms, one question",
-    place: "Montpellier · Los Gatos (remote) · Paris",
+    title: "Data Analytics Certification",
+    place: "Accord Info Matrix",
     story:
-      "Three roles in one year. SEO and CRO at Site Web & Co — 35% organic growth, won by fixing templates rather than pages. Human-in-the-loop AI at Oigetit — teaching a misinformation engine to explain itself. Process analysis at V Raise in Paris — 12% efficiency across logistics workflows.",
-    bridge:
-      "Measurement, trust and systems: three different rooms, all asking how you make something complex feel obvious. That question has a job title.",
+      "Discovered the synergy between data and commercial storytelling. Completed comprehensive training across Power BI, SQL (MySQL & Server), Excel modeling, and Python fundamentals.",
+    bridge: "Data provided the measurement; marketing provided the canvas.",
     fr: {
-      title: "Trois terrains, une seule question",
-      place: "Montpellier · Los Gatos (à distance) · Paris",
+      title: "Certification en analyse de données",
+      place: "Accord Info Matrix",
       story:
-        "Trois postes en un an. SEO et CRO chez Site Web & Co — +35 % de trafic organique, gagnés en corrigeant les gabarits plutôt que les pages. IA « human-in-the-loop » chez Oigetit — apprendre à un moteur anti-désinformation à s’expliquer. Analyse de processus chez V Raise à Paris — +12 % d’efficacité sur les flux logistiques.",
-      bridge:
-        "Mesure, confiance, systèmes : trois terrains différents, une même question — comment rendre le complexe évident ? Cette question a un intitulé de poste.",
+        "Découverte de la synergie entre analyse de données et storytelling commercial. Formation approfondie sur Power BI, SQL, modélisation Excel et Python.",
+      bridge: "La donnée apporte la mesure ; le marketing offre le terrain d'action.",
     },
   },
   {
-    id: "product",
-    year: "2026",
-    title: "The job it was heading toward",
-    place: "Sophia Antipolis, France",
+    id: "campaigns",
+    year: "2025 – 2026",
+    title: "Real-World Content & Marketing",
+    place: "Sawsee Activewear & Exordium DCA",
     story:
-      "March: first place at the UNBIAS hackathon with LockAI, a privacy-first offline AI assistant — strategy, UX and three working prototypes in one sprint. May: Product Designer at Heeding, designing the UX of a sustainable-fuel marketplace aimed at a billion tonnes of avoided CO₂.",
-    bridge:
-      "Selling taught me customers. Analysis taught me systems. Design is where the two finally do the same job.",
+      "Crafted conversion-focused product descriptions and scripted high-engagement Meta/Instagram ad campaigns for Sawsee Activewear (4 featured reels). Authored promotional student-enrollment campaign scripts for Exordium DCA.",
+    bridge: "Creative storytelling combined with conversion thinking produced measurable market traction.",
     fr: {
-      title: "Le métier vers lequel tout allait",
-      place: "Sophia Antipolis, France",
+      title: "Marketing & campagnes concrètes",
+      place: "Sawsee Activewear & Exordium DCA",
       story:
-        "Mars : première place au hackathon UNBIAS avec LockAI, un assistant IA hors-ligne axé confidentialité — stratégie, UX et trois prototypes fonctionnels en un sprint. Mai : Product Designer chez Heeding, l’UX d’une marketplace de carburants durables visant un milliard de tonnes de CO₂ évitées.",
-      bridge:
-        "La vente m’a appris les clients. L’analyse m’a appris les systèmes. Le design est l’endroit où les deux font enfin le même travail.",
+        "Rédaction de fiches produits axées conversion et écriture de scripts publicitaires Meta/Instagram pour Sawsee Activewear (4 reels phares) et Exordium DCA.",
+      bridge: "Le storytelling créatif allié à la conversion a généré des résultats mesurables.",
+    },
+  },
+  {
+    id: "dubai",
+    year: "2026 – Present",
+    title: "Dubai & Business Analytics",
+    place: "University of Wollongong in Dubai · Microapple · Studentverse",
+    story:
+      "Pursuing a Master's in Business Analytics at UOWD. Driving B2B lead generation and supplier relations at Microapple Technologies, and managing social media brand voice for accommodation solution Baitna at Studentverse.",
+    bridge: "From engineering to commercial leadership: bridging data insights and brand growth.",
+    fr: {
+      title: "Dubaï & Business Analytics",
+      place: "University of Wollongong in Dubai · Microapple · Studentverse",
+      story:
+        "En Master Business Analytics à l'UOWD. Développement commercial B2B chez Microapple Technologies et gestion de la voix de marque pour Baitna chez Studentverse.",
+      bridge: "De l'ingénierie au leadership commercial : l'alliance des données et de la croissance de marque.",
     },
   },
 ];

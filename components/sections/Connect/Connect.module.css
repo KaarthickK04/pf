@@ -256,25 +256,26 @@
 }
 
 /* ---------- responsive ---------- */
-@media (max-width: 1080px) {
+@media (max-width: 1180px) {
   .panelInner {
-    width: 172px;
-    height: 240px;
+    width: clamp(140px, 15vw, 185px);
+    height: 250px;
   }
   .panel:nth-child(1) .panelInner,
   .panel:nth-child(5) .panelInner {
-    height: 268px;
+    height: 280px;
+  }
+  .arc {
+    gap: clamp(10px, 1.6vw, 20px);
   }
 }
-/* Promoted from 820px: five 172px panels plus four 26px gaps need ~964px, so
-   between 821 and 963px the outer two were cropped by the viewport edge. The
-   arc drops to three panels for the whole mobile range instead. */
-@media (max-width: 1000px) {
+
+@media (max-width: 768px) {
   .connect {
     padding-top: 100px;
   }
   .arc {
-    gap: 16px;
+    gap: 12px;
     margin-top: 56px;
   }
   .panel:nth-child(1),
@@ -282,7 +283,7 @@
     display: none;
   }
   .panelInner {
-    width: min(30vw, 168px);
+    width: min(30vw, 160px);
     height: 220px;
   }
   .footer {

@@ -37,21 +37,21 @@ const CHAPTERS: Chapter[] = [
     label: "Introduction",
     title: (
       <>
-        I&rsquo;m Gireesh — I design products people{" "}
-        <em className={styles.serif}>trust.</em>
+        I&rsquo;m Kaarthick — I build campaigns that{" "}
+        <em className={styles.serif}>convert.</em>
       </>
     ),
-    body: "Product Designer & UX Consultant, currently shaping the UX of Heeding Climate Solutions' sustainable-fuel marketplace while completing my MSc at Montpellier Business School.",
+    body: "Digital marketing and business development professional, combining commercial execution and brand storytelling with data-driven insights via Power BI, SQL, and Python.",
   },
   {
     label: "My Journey",
     title: (
       <>
-        I came to design from the{" "}
-        <em className={styles.serif}>market side.</em>
+        I came to marketing with an{" "}
+        <em className={styles.serif}>engineering mindset.</em>
       </>
     ),
-    body: "Growth, analytics, operations — three years of watching users say no taught me exactly what makes them say yes.",
+    body: "Electronics and Communication Engineering taught me analytical rigor; real-world marketing taught me how storytelling and data turn audience interest into commercial growth.",
   },
   {
     label: "Design Philosophy",

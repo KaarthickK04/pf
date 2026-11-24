@@ -79,8 +79,8 @@ export default function Gallery() {
         (1 + (i % 2 === 0 ? 1 : -1) * VARIANCE * ((i + 1) / colEls.length)) *
         (i % 2 === 0 ? 1 : 0.84)
     );
-    const offsets = colEls.map(() => 0);
     const halves = colEls.map((c) => Math.max(1, c.scrollHeight / 2));
+    const offsets = colEls.map((_, i) => (i * 90) % halves[i]);
 
     /* The wall is a flex child now, so `vh` no longer describes its height.
        Publish the measured height as --wall-h; tile sizing keys off it, which
@@ -142,14 +142,15 @@ export default function Gallery() {
     const wall = el.querySelector<HTMLElement>(`.${styles.wall}`);
     let onMove: ((e: PointerEvent) => void) | null = null;
     if (wall && finePointer) {
+      gsap.set(wall, { rotationX: 7, rotationY: -3.5, transformPerspective: 1600 });
       const px = gsap.quickTo(wall, "x", { duration: 1.2, ease: "power3.out" });
       const py = gsap.quickTo(wall, "y", { duration: 1.2, ease: "power3.out" });
       onMove = (e: PointerEvent) => {
         const r = el.getBoundingClientRect();
         const cx = ((e.clientX - r.left) / r.width - 0.5) * 2;
         const cy = ((e.clientY - r.top) / r.height - 0.5) * 2;
-        px(cx * 30 * PARALLAX);
-        py(cy * 20 * PARALLAX);
+        px(cx * 20 * PARALLAX);
+        py(cy * 14 * PARALLAX);
       };
       el.addEventListener("pointermove", onMove);
     }

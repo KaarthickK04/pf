@@ -19,11 +19,11 @@ import { useLang } from "@/lib/i18n";
    photos are landscape, so this keeps him in frame — the images are cropped,
    never scaled non-uniformly, and their colour is left untouched. */
 const PANELS = [
-  { src: "/images/connect/moment-1.jpg", focus: "58% 30%", rotate: 26, z: -110, y: -26 },
-  { src: "/images/connect/moment-2.jpg", focus: "center 32%", rotate: 13, z: -40, y: -8 },
-  { src: "/images/connect/moment-3.jpg", focus: "center 34%", rotate: 0, z: 0, y: 0 },
-  { src: "/images/connect/moment-4.jpg", focus: "center 30%", rotate: -13, z: -40, y: -8 },
-  { src: "/images/connect/moment-5.jpg", focus: "46% 32%", rotate: -26, z: -110, y: -26 },
+  { src: "/images/connect/moment-1.jpg", focus: "center 24%", rotate: 26, z: -110, y: -26 },
+  { src: "/images/connect/moment-2.jpg", focus: "40% 22%", rotate: 13, z: -40, y: -8 },
+  { src: "/images/connect/moment-3.jpg", focus: "center 75%", rotate: 0, z: 0, y: 0 },
+  { src: "/images/connect/moment-4.jpg", focus: "center 68%", rotate: -13, z: -40, y: -8 },
+  { src: "/images/connect/moment-5.jpg", focus: "center 48%", rotate: -26, z: -110, y: -26 },
 ];
 
 /* Official brand marks, inlined so they inherit size and need no requests.
@@ -47,12 +47,12 @@ const MARKS: Record<string, ReactNode> = {
   ),
 };
 
-/* URLs exactly as supplied — never guessed (see CONTENT_AUDIT.md) */
+/* URLs exactly as supplied — verified from Kaarthick's resume and portfolio */
 const SOCIALS = [
-  { name: "LinkedIn", mark: "linkedin", href: "https://www.linkedin.com/in/gireesh-kumar-reddy-kolli-" },
-  { name: "GitHub", mark: "github", href: "https://github.com/gireeshkumarreddy" },
-  { name: "Instagram", mark: "instagram", href: "https://www.instagram.com/itsgireeshreddy" },
-  { name: "Email", glyph: "@", href: "mailto:kolligireeshkumarreddy0622@gmail.com" },
+  { name: "LinkedIn", mark: "linkedin", href: "https://www.linkedin.com/in/kaarthick-k0407" },
+  { name: "GitHub", mark: "github", href: "https://github.com/KaarthickK04" },
+  { name: "Instagram", mark: "instagram", href: "https://www.instagram.com/__iamkayyy___?fqnt=MWM1d3ZnajhlMnFrbg==" },
+  { name: "Email", glyph: "@", href: "mailto:kaarthickk04@gmail.com" },
 ] as const;
 
 export default function Connect() {
@@ -151,7 +151,7 @@ export default function Connect() {
           {t("connect.lede")}
         </p>
         <div className={styles.cta}>
-          <Button href="mailto:kolligireeshkumarreddy0622@gmail.com" variant="primary" arrow>
+          <Button href="mailto:kaarthickk04@gmail.com" variant="primary" arrow>
             {t("connect.cta")}
           </Button>
         </div>
@@ -208,12 +208,12 @@ export default function Connect() {
 
       <footer className={styles.footer}>
         <span>
-          {t("connect.credit")} <b>Gireesh</b>
+          {t("connect.credit")} <b>Kaarthick</b>
         </span>
         <a href="#home" className={styles.top}>
           {t("connect.top")}
         </a>
-        <span>© 2026 Gireesh Kumar Reddy Kolli</span>
+        <span>© 2026 Kaarthick Kumar</span>
       </footer>
     </section>
   );

@@ -4,10 +4,10 @@
   position: relative;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
-  padding: 30px 0;
+  padding: clamp(8px, 1.4vh, 16px) 0;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: clamp(4px, 0.8vh, 8px);
   overflow: hidden;
   background: #fff;
 }
@@ -35,7 +35,7 @@
 .solidText,
 .outlineText {
   font-weight: 900;
-  font-size: clamp(26px, 3.4vw, 46px);
+  font-size: clamp(16px, min(2.5vw, 3vh), 32px);
   letter-spacing: -0.03em;
   line-height: 1.05;
   text-transform: none;
@@ -45,13 +45,13 @@
 }
 .outlineText {
   color: transparent;
-  -webkit-text-stroke: 1.4px #1f1f22;
+  -webkit-text-stroke: 1.2px #1f1f22;
 }
 
 .sep {
   color: var(--accent);
   font-size: 0.5em;
-  margin: 0 26px;
+  margin: 0 clamp(12px, 1.8vw, 22px);
   align-self: center;
 }
 

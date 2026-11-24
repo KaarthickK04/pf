@@ -3,16 +3,17 @@
 import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { gsap, prefersReducedMotion, EASE } from "@/lib/gsap";
+import { sceneScrub } from "@/lib/scene";
 import Button from "@/components/ui/Button";
 import styles from "./Hero.module.css";
 import { useLang } from "@/lib/i18n";
 
 const STATS_LEFT = [
-  { n: 20, suffix: "+", key: "stat.projects", icon: "/images/icons/projects.png" },
-  { n: 5, suffix: "+", key: "stat.years", icon: "/images/icons/years.png" },
+  { n: 10, suffix: "+", key: "stat.projects", icon: "/images/icons/projects.png" },
+  { n: 8, suffix: "+", key: "stat.years", icon: "/images/icons/years.png" },
 ];
 const STATS_RIGHT = [
-  { n: 10, suffix: "+", key: "stat.countries", icon: "/images/icons/countries.png" },
+  { n: 4, suffix: "", key: "stat.countries", icon: "/images/icons/countries.png" },
   { n: 100, suffix: "%", key: "stat.satisfaction", icon: "/images/icons/satisfaction.png" },
 ];
 
@@ -153,7 +154,7 @@ export default function Hero() {
       /* ---------- Scroll: gentle layered exit ---------- */
       gsap
         .timeline({
-          scrollTrigger: { trigger: el, start: "top top", end: "bottom top", scrub: true },
+          scrollTrigger: { ...sceneScrub(el), scrub: true },
         })
         .to(`.${styles.head}`, { y: -60, autoAlpha: 0.2 }, 0)
         .to(`.${styles.arch}`, { y: 50 }, 0)
@@ -222,7 +223,7 @@ export default function Hero() {
           <Image
             className={styles.portrait}
             src="/images/portrait.png"
-            alt="Gireesh Kumar Reddy — Product Designer"
+            alt="Kaarthick Kumar — Digital Marketing & Analytics"
             width={554}
             height={573}
             priority

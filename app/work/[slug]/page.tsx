@@ -14,19 +14,23 @@ export function generateStaticParams() {
   return PROJECTS.map((p) => ({ slug: p.slug }));
 }
 
+type PageParams = {
+  params: Promise<{ slug: string }>;
+};
+
 export async function generateMetadata({
   params,
-}: PageProps<"/work/[slug]">): Promise<Metadata> {
+}: PageParams): Promise<Metadata> {
   const { slug } = await params;
   const project = PROJECTS.find((p) => p.slug === slug);
   if (!project) return {};
   return {
-    title: `${project.title} — Case Study · Gireesh`,
+    title: `${project.title} — Case Study · Kaarthick`,
     description: project.oneLiner,
   };
 }
 
-export default async function CaseStudy({ params }: PageProps<"/work/[slug]">) {
+export default async function CaseStudy({ params }: PageParams) {
   const { slug } = await params;
   if (!PROJECTS.some((p) => p.slug === slug)) notFound();
 

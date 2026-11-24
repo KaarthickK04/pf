@@ -12,7 +12,12 @@
   background: var(--bg, #fff);
   /* keeps a section's internal z-indexes from escaping into the scene stack */
   isolation: isolate;
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+}
+.hold::-webkit-scrollbar {
+  display: none;
 }
 
 /* the section fills its frame */
@@ -40,34 +45,27 @@
 
    Scenes that genuinely ARE one screen on a phone (the tunnel, the journey,
    the drift wall) opt out with `.keepFrame` and keep the cinematic hold. */
-@media (max-width: 1000px) {
-  .hold {
-    position: static;
-    height: auto;
-    min-height: auto;
-    overflow: visible;
-    isolation: auto;
-  }
-  .hold > * {
-    height: auto;
-  }
-  .runway {
-    display: none;
-  }
-
-  /* full-screen-on-mobile scenes keep their frame */
+/* ============ MOBILE / RESPONSIVE FLOW ============
+   Below the tablet breakpoint, the cinematic stack cleanly releases:
+   every scene becomes an ordinary flowing document block, and runways collapse.
+   This prevents sticky overlays from occluding subsequent content. */
+@media (max-width: 768px) {
+  .hold,
   .keepFrame {
-    position: sticky;
-    top: 0;
-    height: 100svh;
-    overflow: hidden;
-    isolation: isolate;
+    position: relative !important;
+    top: auto !important;
+    height: auto !important;
+    min-height: auto !important;
+    overflow: visible !important;
+    isolation: auto !important;
   }
+  .hold > *,
   .keepFrame > * {
-    height: 100%;
+    height: auto !important;
   }
+  .runway,
   .keepRunway {
-    display: block;
+    display: none !important;
   }
 }
 
